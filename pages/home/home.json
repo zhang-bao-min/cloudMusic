@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "c-swiper": "/components/c-swiper/c-swiper",
+    "c-select": "/pages/home/childCpns/c-select/c-select",
+    "c-recommend": "/pages/home/childCpns/c-recommend/c-recommend",
+    "c-hot-list": "/pages/home/childCpns/c-hot-list/c-hot-list"
+  }
+}

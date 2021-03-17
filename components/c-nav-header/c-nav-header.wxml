@@ -1,0 +1,9 @@
+<!--components/c-nav-header/c-nav-header.wxml-->
+<view class="header">
+  <text class="title">{{title}}</text>
+  <view class="subtitle">
+    <text>{{subtitle}}</text>
+    <text class="read-more">查看更多</text>
+  </view>
+</view>
+

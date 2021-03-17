@@ -1,0 +1,14 @@
+<!--pages/home/childCpns/c-recommend/c-recommend.wxml-->
+<view class="recommendContainer">
+  <c-nav-header title="推荐歌曲" subtitle="为您精心推荐"></c-nav-header>
+  <scroll-view class="content" 
+              enable-flex 
+              scroll-x>
+    <block wx:for="{{recommends}}" wx:key="index">
+      <view class="content-item">
+        <image src="{{item.picUrl}}"></image>
+        <text>{{item.name}}</text>
+      </view>
+    </block>
+  </scroll-view>
+</view>

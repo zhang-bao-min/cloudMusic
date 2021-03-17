@@ -1,0 +1,78 @@
+<!--pages/video/video.wxml-->
+<view class="video">
+
+  <!-- 搜索区域 -->
+  <view class="header">
+    <view class="search">
+      <text class="iconfont icon-sousuo"></text>
+      搜索音乐</view>
+    <image class="right-icon" src="/static/images/logo.jpg"></image>
+  </view>
+
+  <!-- 导航区域 -->
+  <scroll-view class="navScroll"
+               enable-flex
+               scroll-x
+               scroll-into-view="{{'scroll' + navId}}"
+               scroll-with-animation>
+    <block  wx:for="{{videoGroupList}}" wx:key="id">
+      <view id="{{'scroll' + item.id}}" class="navItem">
+        <view class="navContent {{item.id == navId ? 'active' : ''}}"
+              bindtap="changeNav" 
+              id="{{item.id}}">
+          {{item.name}}
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+
+  <!-- 视频区域 -->
+  <scroll-view class="videoScroll"
+               scroll-y>
+    <block wx:for="{{videos}}" wx:key="id">
+      <view class="videoItem">
+        <view class="videoHeader">
+          <image src="{{item.data.creator.avatarUrl}}"></image>
+          <text>{{item.data.creator.nickname}}</text>
+        </view>
+        <view class="videoContent">
+          <video id="{{item.data.vid}}"
+                 class="common"
+                 src="{{item.data.urlInfo.url}}"
+                 bindplay="handlePlay"
+                 bindtimeupdate="handleTimeUpdate"
+                 bindended="handleEnded"
+                 poster="{{item.data.coverUrl}}"
+                 object-fit="fill"
+                 wx:if="{{item.data.vid === videoId}}">
+          </video>
+          <!-- 性能优化,使用image代替video -->
+          <image id="{{item.data.vid}}"
+                 class="common"
+                 src="{{item.data.coverUrl}}"
+                 bindtap="handlePlay"
+                 wx:else>
+          </image>
+        </view>
+        <view class="videoFooter">
+          <view class="videoTitle">
+            <text>{{item.data.title}}</text>
+          </view>
+          <view class="videoInfo">
+            <text class="right-icon">
+              <text class="iconfont icon-shoucang1"></text>
+              <text class="right-text">{{item.data.praisedCount}}</text>
+            </text>
+            <text class="right-icon">
+              <text class="iconfont icon-pinglun1"></text>
+              <text class="right-text">{{item.data.commentCount}}</text>
+            </text>
+            <text class="right-icon">
+              <text class="iconfont icon-gengduo_huaban"></text>
+            </text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>

@@ -1,0 +1,47 @@
+/* pages/home/childCpns/c-hotList/c-hotList.wxss */
+.hotList{
+  margin: 0 20rpx;
+}
+
+.swiper{
+  height: 420rpx;
+}
+
+.swiper .title{
+  font-size: 30rpx;
+  line-height: 60rpx;
+}
+
+.swiper-item{
+  width: 96% !important;
+  background-color: #fbfbfb;
+  /* background-color: red; */
+  /* margin-right: 20rpx; */
+}
+
+.swiper-item .content{
+  display: flex;
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+}
+
+.swiper-item .content image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+}
+
+.swiper-item .rank{
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.swiper-item .musicName{
+  width: 300rpx;
+  line-height: 100rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

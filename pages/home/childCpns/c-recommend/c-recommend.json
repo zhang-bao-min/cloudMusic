@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "c-nav-header": "/components/c-nav-header/c-nav-header"
+  }
+}

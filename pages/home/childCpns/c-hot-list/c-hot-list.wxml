@@ -1,0 +1,21 @@
+<!--pages/home/childCpns/c-hotList/c-hotList.wxml-->
+<view class="hotList">
+  <c-nav-header title="排行榜" subtitle="热歌风向榜"></c-nav-header>
+  <swiper class="swiper" 
+      circular
+      previous-margin="50rpx"
+      next-margin="50rpx">
+    <block class="block" wx:for="{{hotLists}}" wx:key="name">
+      <swiper-item class="swiper-item">
+        <view class="title">{{item.name}}</view>
+        <block wx:for="{{item.tracks}}" wx:key="id" wx:for-item="musicItem">
+          <view class="content">
+            <image src="{{musicItem.al.picUrl}}"></image>
+            <text class="rank">{{index+1}}</text>
+            <text class="musicName">{{musicItem.name}}</text>
+          </view>
+        </block>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

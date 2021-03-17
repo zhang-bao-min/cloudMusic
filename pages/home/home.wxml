@@ -1,0 +1,12 @@
+<!--pages/home/home.wxml-->
+<!-- 轮播图 -->
+<c-swiper banners="{{banners}}" path="pic"></c-swiper>
+
+<!-- 选择类型 -->
+<c-select></c-select>
+
+<!-- 推荐 -->
+<c-recommend recommends="{{recommends}}"></c-recommend>
+
+<!-- 热歌榜 -->
+<c-hot-list hotLists="{{hotLists}}"></c-hot-list>
