@@ -1,6 +1,6 @@
 <!--pages/home/childCpns/c-select/c-select.wxml-->
 <view class="navContainer">
-  <view class="navItem">
+  <view class="navItem" bindtap="handleRecommendSongs">
     <text class="iconfont icon-tuijian"></text>
     <text>每日推荐</text>
   </view>

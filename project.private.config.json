@@ -13,8 +13,8 @@
     "miniprogram": {
       "list": [
         {
-          "name": "pages",
-          "pathName": "pages/video/video",
+          "name": "pages/recommendSong/recommendSong",
+          "pathName": "pages/recommendSong/recommendSong",
           "query": "",
           "scene": null
         }

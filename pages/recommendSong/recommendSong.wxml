@@ -1,0 +1,33 @@
+<!--pages/recommendSong/recommendSong.wxml-->
+<view class="recommendSongContainer">
+  <!-- 头部 -->
+  <view class="header">
+    <image src="/static/images/recommendSong/recommendSong.jpg"></image>
+    <view class="date">
+      <text class="day">{{day}}/</text>
+      <text class="month">{{month}}</text>
+    </view>
+  </view>
+
+  <!-- 歌曲列表区域 -->
+  <view class="musicList">
+    <view class="listHeader">
+      <text>播放全部</text>
+      <text class="select">多选</text>
+    </view>
+
+    <scroll-view class="listScroll"
+                 scroll-y>
+      <block wx:for="{{recommendSongs}}" wx:key="id">
+        <view class="scrollItem">
+          <image src="{{item.album.picUrl}}"></image>
+          <view class="musicInfo">
+            <text class="musicName">{{item.name}}</text>
+            <text class="author">{{item.artists[0].name}}</text>
+          </view>
+          <text class="iconfont icon-gengduo_huaban"></text>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

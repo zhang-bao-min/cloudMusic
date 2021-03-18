@@ -14,14 +14,19 @@ Page({
     navId: '',
     videos: [],
     videoId: '',
-    videoUpdateTime: []
+    videoUpdateTime: [],
+    isTriggered: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     this._getVideoGroupData()
+  },
+
+  onShareAppMessage: function() {
+
   },
 
   changeNav(event) {
@@ -56,6 +61,7 @@ Page({
   // 视频数据
   _getVideoData(options) {
     getVideoData(options).then((res) => {
+      // 关闭加载
       wx.hideLoading()
       let index = 0
       let videos = res.data.datas.map(item => {
@@ -64,7 +70,9 @@ Page({
       })
 
       this.setData({
-        videos
+        videos,
+        // 关闭下拉刷新
+        isTriggered: false
       })
     })
   },
@@ -136,5 +144,10 @@ Page({
     this.setData({
       videoUpdateTime
     })
+  },
+
+  // 下拉刷新回调
+  handleResref() {
+    this._getVideoData({id: this.data.navId})
   }
 })

@@ -28,7 +28,10 @@
 
   <!-- 视频区域 -->
   <scroll-view class="videoScroll"
-               scroll-y>
+               scroll-y
+               refresher-enabled
+               bindrefresherrefresh="handleResref"
+               refresher-triggered="{{isTriggered}}">
     <block wx:for="{{videos}}" wx:key="id">
       <view class="videoItem">
         <view class="videoHeader">
@@ -67,9 +70,10 @@
               <text class="iconfont icon-pinglun1"></text>
               <text class="right-text">{{item.data.commentCount}}</text>
             </text>
-            <text class="right-icon">
+            <button class="right-icon"
+                    open-type="share">
               <text class="iconfont icon-gengduo_huaban"></text>
-            </text>
+            </button>
           </view>
         </view>
       </view>
