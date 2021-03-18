@@ -46,7 +46,7 @@
                  bindtimeupdate="handleTimeUpdate"
                  bindended="handleEnded"
                  poster="{{item.data.coverUrl}}"
-                 object-fit="fill"
+                 object-fit="cover"
                  wx:if="{{item.data.vid === videoId}}">
           </video>
           <!-- 性能优化,使用image代替video -->

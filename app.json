@@ -4,7 +4,9 @@
     "pages/login/login",
     "pages/personal/personal",
     "pages/video/video",
-    "pages/recommendSong/recommendSong"
+    "pages/recommendSong/recommendSong",
+    "pages/detail/detail"
+    
   ],
   "window": {
     "navigationBarBackgroundColor": "#d43c33",
