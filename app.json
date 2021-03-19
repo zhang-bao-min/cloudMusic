@@ -5,7 +5,7 @@
     "pages/personal/personal",
     "pages/video/video",
     "pages/recommendSong/recommendSong",
-    "pages/detail/detail"
+    "pages/musicPlay/musicPlay"
     
   ],
   "window": {
@@ -38,5 +38,6 @@
     "selectedColor": "#d43c33",
     "backgroundColor": "#fff"
   },
+  "requiredBackgroundModes": ["audio"],
   "sitemapLocation": "sitemap.json"
 }

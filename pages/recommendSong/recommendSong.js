@@ -2,6 +2,9 @@
 import {
   getRecommendSongData
 } from '../../service/recommendSong.js'
+import {
+  toPlayMusic
+} from '../../common/common.js'
 
 Page({
 
@@ -58,5 +61,11 @@ Page({
         recommendSongs
       })
     })
+  },
+
+  // 点击播放音乐
+  handlePlayMusic(event) {
+    let song = event.currentTarget.dataset.song
+    toPlayMusic(song.id)
   }
 })

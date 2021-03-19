@@ -19,7 +19,7 @@
     <scroll-view class="listScroll"
                  scroll-y>
       <block wx:for="{{recommendSongs}}" wx:key="id">
-        <view class="scrollItem">
+        <view class="scrollItem" data-song="{{item}}" bindtap="handlePlayMusic">
           <image src="{{item.album.picUrl}}"></image>
           <view class="musicInfo">
             <text class="musicName">{{item.name}}</text>
