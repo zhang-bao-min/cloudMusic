@@ -1,0 +1,24 @@
+{
+  "name": "cloudMusic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhang-bao-min/cloudMusic.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhang-bao-min/cloudMusic/issues"
+  },
+  "homepage": "https://github.com/zhang-bao-min/cloudMusic#readme",
+  "dependencies": {
+    "moment": "^2.29.1",
+    "pubsub-js": "^1.9.3"
+  }
+}

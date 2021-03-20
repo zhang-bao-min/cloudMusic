@@ -1,4 +1,5 @@
 // pages/recommendSong/recommendSong.js
+import Pubsub from 'pubsub-js'
 import {
   getRecommendSongData
 } from '../../service/recommendSong.js'
@@ -14,7 +15,8 @@ Page({
   data: {
     month: '',
     day: '',
-    recommendSongs: []
+    recommendSongs: [],
+    index: 0
   },
 
   /**
@@ -49,9 +51,28 @@ Page({
           }
         }
       })
+    }
+    this._getRecommendSongData()
+
+    // 订阅来自musicPlay页面发布的消息
+    Pubsub.subscribe('switchType', (msg, type) => {
+      let {recommendSongs, index } = this.data
+      // 获取上下一一首的下标
+      if(type === 'pre') {
+        // index === 0 && index = recommendSongs.length - 1
+        // index -= 1 
+        index === 0 ? index = recommendSongs.length - 1 : index -= 1
+      } else {
+        index === recommendSongs.length - 1 ? index = 0 : index += 1
       }
-      this._getRecommendSongData()
-    },
+      this.setData({
+        index
+      })
+      const musicId = recommendSongs[index].id
+      // 发布消息到musicPlay页面
+      Pubsub.publish('musicId', musicId)
+    })
+  },
 
   // 获取歌曲数据
   _getRecommendSongData(){
@@ -65,7 +86,10 @@ Page({
 
   // 点击播放音乐
   handlePlayMusic(event) {
-    let song = event.currentTarget.dataset.song
+    let {song, index} = event.currentTarget.dataset
+    this.setData({
+      index
+    })
     toPlayMusic(song.id)
   }
 })
