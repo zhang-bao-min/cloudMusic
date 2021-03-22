@@ -83,7 +83,7 @@ Page({
       wx.setStorageSync('cookies', JSON.stringify(this.data.cookies))
       wx.setStorageSync('userInfo', JSON.stringify(this.data.userInfo))
       wx.reLaunch({
-        url: '/pages/personal/personal',
+        url: '/pages/home/home',
       })
     } else if (code === 502) {
       wx.showToast({

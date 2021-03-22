@@ -4,3 +4,10 @@ export function toPlayMusic(id) {
     url: id ? url + '?id=' + id : url
   })
 }
+
+export function toSearch() {
+  let url = '/pages/search/search'
+  wx.navigateTo({
+    url
+  })
+}

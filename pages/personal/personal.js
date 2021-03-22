@@ -1,5 +1,8 @@
 // pages/personal/personal.js
 import {
+  toPlayMusic
+} from '../../common/common.js'
+import {
   getRecentPlayData
 } from '../../service/personal.js'
 
@@ -89,5 +92,11 @@ Page({
         recentPlays
       })
     })
+  },
+
+  // 播放历史记录回调
+  handleMusiclay(event) {
+    let id = event.currentTarget.dataset.id
+    toPlayMusic(id)
   }
 })

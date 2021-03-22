@@ -3,7 +3,7 @@
 
   <!-- 搜索区域 -->
   <view class="header">
-    <view class="search">
+    <view class="search" bindtap="handleSearch">
       <text class="iconfont icon-sousuo"></text>
       搜索音乐</view>
     <image class="right-icon" src="/static/images/logo.jpg"></image>

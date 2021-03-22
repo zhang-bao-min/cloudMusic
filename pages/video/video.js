@@ -3,6 +3,9 @@ import {
   getVideoGroupData,
   getVideoData
 } from '../../service/video.js'
+import {
+  toSearch
+} from '../../common/common.js'
 
 Page({
 
@@ -23,10 +26,6 @@ Page({
    */
   onLoad: function(options) {
     this._getVideoGroupData()
-  },
-
-  onShareAppMessage: function() {
-
   },
 
   changeNav(event) {
@@ -149,5 +148,10 @@ Page({
   // 下拉刷新回调
   handleResref() {
     this._getVideoData({id: this.data.navId})
+  },
+
+  // 点击搜索回调
+  handleSearch() {
+    toSearch()
   }
 })

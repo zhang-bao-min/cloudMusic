@@ -58,7 +58,9 @@
                      scroll-x
                      wx:if="{{recentPlays.length}}">
           <block wx:for="{{recentPlays}}" wx:key='id'>
-            <view class="recentItem">
+            <view class="recentItem" 
+                  data-id="{{item.song.id}}"
+                  bindtap="handleMusiclay">
               <image src="{{item.song.al.picUrl}}"></image>
               <text>{{item.song.al.name}}</text>
             </view>

@@ -1,0 +1,112 @@
+/* pages/search/search.wxss */
+.search{
+  margin: 0 20rpx;
+}
+
+.header{
+  display: flex;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 20rpx 0;
+}
+
+.header .searchInput{
+  position: relative;
+  flex: 1;
+  background: rgba(237, 237, 237, .4);
+  border-radius: 30rpx;
+}
+
+.searchInput .icon-sousuo{
+  position: absolute;
+  left: 15rpx;
+}
+
+.searchInput input{
+  margin-left: 50rpx;
+  height: 60rpx;
+}
+
+.searchInput .placeholder{
+  color: #ccc;
+  font-size: 28rpx;
+}
+
+
+.header .cancel{
+  width: 100rpx;
+  text-align: center;
+}
+
+/* 搜索历史纪录 */
+.searchHistory{
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 50rpx;
+}
+
+.searchHistory .title{
+  height: 50rpx;
+  font-size: 28rpx;
+}
+
+.searchHistory .historyItem{
+  max-width: 100rpx;
+  height: 50rpx;
+  font-size: 26rpx;
+  padding: 0 20rpx;
+  margin: 0 0 10rpx 20rpx;
+  background: rgba(237, 237, 237, .4);
+  border-radius: 30rpx;
+}
+
+.historyItem{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: '';
+}
+
+/* 热搜榜 */
+.hotContainer{
+  font-size: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.hotList{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hotList .hotItem{
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+}
+
+.hotItem .musicOrder{
+  margin: 0 10rpx;
+}
+
+.hotItem image{
+  width: 35rpx;
+  height: 20rpx;
+  margin-left: 10rpx;
+}
+
+/* 搜索结果 */
+.searchItem{
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+}
+
+.searchItem .searchMusicName{
+  flex: 1;
+  margin-left: 10rpx;
+  border-bottom: 1px solid #eee;
+  font-size: 26rpx;
+}
+
